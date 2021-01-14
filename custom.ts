@@ -11,6 +11,17 @@ enum MyEnum {
     Two
 }
 
+class Dictionary {
+  keys: string [];
+  values: string [];
+
+
+  add(key: string, value: string): void {
+    this.keys.push(key)
+    this.values.push(value)
+  }
+}
+
 /**
  * Custom blocks
  */
@@ -48,4 +59,13 @@ namespace Math {
     export function mod(a: number, n: number): number {
         return (a % n + n) % n
     }
+}
+
+//% weight=100 color=#0fbc11 icon=""
+namespace dictionaries {
+    
+    export function createDictionary(): Dictionary{
+        return new Dictionary()
+    }
+    
 }
