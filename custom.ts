@@ -15,7 +15,7 @@ enum MyEnum {
  * Custom blocks
  */
 //% weight=100 color=#0fbc11 icon=""
-namespace custom {
+namespace encryption {
     /**
      * TODO: describe your function here
      * @param n describe parameter here, eg: 5
@@ -34,5 +34,13 @@ namespace custom {
     //% block
     export function fib(value: number): number {
         return value <= 1 ? value : fib(value -1) + fib(value - 2);
+    }
+}
+
+namespace Math {
+
+    //% block = "%a | mod | %n"
+    export function mod(a: number, n: number): number {
+        return (a % n + n) % n
     }
 }
