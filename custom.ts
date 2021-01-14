@@ -1,4 +1,3 @@
-
 /**
  * Use this file to define custom functions and blocks.
  * Read more at https://makecode.microbit.org/blocks/custom
@@ -10,18 +9,7 @@ enum MyEnum {
     //% block="two"
     Two
 }
-/*
-class Dictionary {
-  keys: string [];
-  values: string [];
 
-
-  add(key: string, value: string): void {
-    this.keys.push(key)
-    this.values.push(value)
-  }
-}
-*/
 
 /**
  * Custom blocks
@@ -61,12 +49,42 @@ namespace Math {
     }
 }
 
-/*
+
 //% weight=100 color=#0fbc11 icon="x"
-namespace dictionaries {
-    
-    export function createDictionary(): Dictionary{
-        return new Dictionary()
+namespace dictionaries { 
+
+    let _dicts: Dictionary[];
+
+    //% block = "New Dictionary"
+    export function createDictionary(): Dictionary {
+        init();
+        let newDictionary = new Dictionary();
+        return newDictionary;
     }
     
-}*/
+    //%
+    export class Dictionary {
+        public keys: string[];
+        public values: string[];
+
+        constructor(){
+            init();
+            this.keys = [];
+            this.values = [];
+            _dicts.push(this);
+        }
+
+        //% block="%dictionary | %key | %value"
+        public setPair(key: string, value:string): void{
+            this.keys.push(key)
+            this.values.push(value)
+        }
+    }
+
+    function init(): void {
+        _dicts = (<Dictionary[]>[]);
+    }
+}
+
+
+

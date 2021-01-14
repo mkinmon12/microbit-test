@@ -1,1 +1,2 @@
-basic.showString(encryption.shift("Hello", 5))
+let dictionary = dictionaries.createDictionary()
+dictionary.setPair("", "")
