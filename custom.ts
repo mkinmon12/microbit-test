@@ -38,8 +38,13 @@ namespace encryption {
 }
 
 namespace Math {
-
-    //% block = "%a | mod | %n"
+    /**
+     * Perform modular arithmetic that returns a positive value.
+     * Returns the remainder of a divided by n.
+     * @param a The value to be divided.
+     * @param n The value that divides a. 
+     */
+    //% block="%a | mod | %n"
     export function mod(a: number, n: number): number {
         return (a % n + n) % n
     }
