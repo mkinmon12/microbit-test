@@ -10,7 +10,7 @@ enum MyEnum {
     //% block="two"
     Two
 }
-
+/*
 class Dictionary {
   keys: string [];
   values: string [];
@@ -21,6 +21,7 @@ class Dictionary {
     this.values.push(value)
   }
 }
+*/
 
 /**
  * Custom blocks
@@ -29,13 +30,12 @@ class Dictionary {
 namespace encryption {
     /**
      * TODO: describe your function here
-     * @param n describe parameter here, eg: 5
      * @param s describe parameter here, eg: "Hello"
-     * @param e describe parameter here
+     * @param n describe parameter here, eg: 5
      */
     //% block
-    export function foo(n: number, s: string, e: MyEnum): void {
-        // Add code here
+    export function shift(s: string, n: number): string {
+        return "This would be encrypted"
     }
 
     /**
@@ -61,11 +61,12 @@ namespace Math {
     }
 }
 
-//% weight=100 color=#0fbc11 icon=""
+/*
+//% weight=100 color=#0fbc11 icon="x"
 namespace dictionaries {
     
     export function createDictionary(): Dictionary{
         return new Dictionary()
     }
     
-}
+}*/
