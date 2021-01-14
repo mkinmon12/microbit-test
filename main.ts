@@ -1,2 +1,2 @@
-let dictionary = dictionaries.createDictionary()
-dictionary.setPair("", "")
+let dictionary: dictionaries.Dictionary = null
+dictionary.setPair(0, 0)

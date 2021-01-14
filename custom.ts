@@ -50,7 +50,7 @@ namespace Math {
 }
 
 
-//% weight=100 color=#0fbc11 icon="x"
+//% weight=100 color=#0fbc11 icon="📚"
 namespace dictionaries { 
 
     let _dicts: Dictionary[];
@@ -74,8 +74,8 @@ namespace dictionaries {
             _dicts.push(this);
         }
 
-        //% block="%dictionary | %key | %value"
-        public setPair(key: string, value:string): void{
+        //% block="set | %dictionary | %key | = | %value"
+        public setPair(key: any, value: any): void{
             this.keys.push(key)
             this.values.push(value)
         }
