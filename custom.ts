@@ -15,6 +15,7 @@ enum MyEnum {
  * Custom blocks
  */
 //% weight=100 color=#0fbc11 icon=""
+//% groups='["Shift Ciphers", "Vigenere Ciphers"]'
 namespace encryption {
     /**
      * TODO: describe your function here
@@ -22,13 +23,17 @@ namespace encryption {
      * @param n describe parameter here, eg: 5
      */
     //% block="shift | %s | with key | %n"
+    //% group="Shift Ciphers"
     export function shift(s: string, n: number): string {
         let alphabet = "abcdefghijklmnopqrstuvwxyz"
         let result = ''
         for (let i = 0; i < s.length; i++){
-            if (s.charAt(i) !== ' '){
-                let index = alphabet.indexOf(s.charAt(i).toLowerCase())
+            let index = alphabet.indexOf(s.charAt(i).toLowerCase())
+            if (index > -1){
                 result = result + alphabet.charAt(Math.mod(index + n, alphabet.length))
+            }
+            else{
+                result = result + s.charAt(i)
             }
         }
         return result
@@ -39,6 +44,7 @@ namespace encryption {
      * @param value describe value here, eg: 5
      */
     //% block
+    //% group="Vigenere Ciphers"
     export function fib(value: number): number {
         return value <= 1 ? value : fib(value -1) + fib(value - 2);
     }

@@ -1,1 +1,1 @@
-basic.showString(encryption.shift("bhv", -3))
+basic.showString(encryption.shift("", -3))
