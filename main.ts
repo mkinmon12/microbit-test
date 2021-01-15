@@ -1,5 +1,1 @@
-let dictionary = dictionaries.createDictionary()
-dictionary.setPair("name", "josh")
-basic.showString(dictionary.getValue("name"))
-dictionary.delPair("name")
-basic.showString(dictionary.getValue("name"))
+

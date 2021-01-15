@@ -51,19 +51,19 @@ namespace Math {
 
 
 //% weight=100 color=#0fbc11 icon="📚"
-namespace dictionaries { 
+namespace pairings { 
 
-    let _dicts: Dictionary[];
+    let _pairings: Pairing[];
 
-    //% block = "New Dictionary"
-    export function createDictionary(): Dictionary {
+    //% block = "new mapping"
+    export function createPairing(): Pairing {
         init();
-        let newDictionary = new Dictionary();
-        return newDictionary;
+        let newMapping = new Pairing();
+        return newMapping;
     }
     
     //%
-    export class Dictionary {
+    export class Pairing {
         public keys: string[];
         public values: string[];
 
@@ -71,16 +71,23 @@ namespace dictionaries {
             init();
             this.keys = [];
             this.values = [];
-            _dicts.push(this);
+            _pairings.push(this);
         }
 
-        //% block="set | %dictionary | %key | : | %value"
+        //% block="set | %pairing | %key | : | %value"
         public setPair(key: string, value: string): void{
-            this.keys.push(key)
-            this.values.push(value)
+            let index = this.keys.indexOf(key)
+            if (index > -1) {
+                this.values[index] = value
+            }
+            else{
+                this.keys.push(key)
+                this.values.push(value)
+            }
+            
         }
 
-        //% block="%dictionary | get value at key | %key"
+        //% block="%pairing | get value at key | %key"
         public getValue(key: string): string {
             let index = this.keys.indexOf(key)
             if (index > -1){
@@ -89,7 +96,7 @@ namespace dictionaries {
             return 'key not found'
         }
 
-        //% block="%dictionary | delete pair at key | %key"
+        //% block="%pairing | delete pair at key | %key"
         public delPair(key: string): void {
             let index = this.keys.indexOf(key)
             if (index > -1){
@@ -100,7 +107,7 @@ namespace dictionaries {
     }
 
     function init(): void {
-        _dicts = (<Dictionary[]>[]);
+        _pairings = (<Pairing[]>[]);
     }
 }
 
