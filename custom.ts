@@ -74,10 +74,16 @@ namespace dictionaries {
             _dicts.push(this);
         }
 
-        //% block="set | %dictionary | %key | = | %value"
-        public setPair(key: any, value: any): void{
+        //% block="set | %dictionary | %key | : | %value"
+        public setPair(key: string, value: string): void{
             this.keys.push(key)
             this.values.push(value)
+        }
+
+        //% block="%dictionary | get value at key | %key"
+        public getValue(key: string): string {
+            let index = this.keys.indexOf(key)
+            return this.values[index]
         }
     }
 

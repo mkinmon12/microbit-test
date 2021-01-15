@@ -1,2 +1,3 @@
-let dictionary: dictionaries.Dictionary = null
-dictionary.setPair(0, 0)
+let dictionary = dictionaries.createDictionary()
+dictionary.setPair("name", "josh")
+basic.showString(dictionary.getValue("name"))
