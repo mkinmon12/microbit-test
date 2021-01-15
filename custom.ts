@@ -21,9 +21,17 @@ namespace encryption {
      * @param s describe parameter here, eg: "Hello"
      * @param n describe parameter here, eg: 5
      */
-    //% block
+    //% block="shift | %s | with key | %n"
     export function shift(s: string, n: number): string {
-        return "This would be encrypted"
+        let alphabet = "abcdefghijklmnopqrstuvwxyz"
+        let result = ''
+        for (let i = 0; i < s.length; i++){
+            if (s.charAt(i) !== ' '){
+                let index = alphabet.indexOf(s.charAt(i).toLowerCase())
+                result = result + alphabet.charAt(Math.mod(index + n, alphabet.length))
+            }
+        }
+        return result
     }
 
     /**
