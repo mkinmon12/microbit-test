@@ -41,12 +41,12 @@ enum Letter {
 namespace encryption {
 
     //% block
-     export const alphabet = "abcdefghijklmnopqrstuvwxyz"
+    export const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
     /**
      * Shift a message using a numeric key.
-     * @param s describe parameter here, eg: "Hello"
-     * @param n describe parameter here, eg: 5
+     * @param s a message to encrypt, eg: "Hello"
+     * @param n a numeric shift, eg: 5
      */
     //% block="shift | %s | with key | %n"
     //% group="Shift Ciphers"
@@ -87,7 +87,7 @@ namespace encryption {
      * @param k1 describe value here, eg: Letter.A 
      * @param k2 describe value here, eg: Letter.D
     */
-    //% block="shift | %s | with shift | %k1=device_letter| to | %k2=device_letter"
+    //% block="shift | %s | with shift | %k1=device_letter | to | %k2=device_letter"
     //% useEnumVal=1
     //% group="Shift Ciphers"
     export function shiftAlphaTwo(s: string, k1: number, k2: number): string{
@@ -96,7 +96,6 @@ namespace encryption {
 
     //% blockId=device_letter block="%name"
     //% useEnumVal=1
-    //% name.fieldOptions.decompileLiterals=true
     export function letterValue(name: Letter): number {
         return name;
     }
