@@ -1,1 +1,3 @@
-basic.showString(encryption.shift("yes", 0))
+basic.forever(function () {
+    basic.showString(encryption.shiftAlphaTwo("hello", encryption.letterValue(Letter.A), encryption.letterValue(Letter.C)))
+})
