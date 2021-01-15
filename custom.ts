@@ -17,6 +17,7 @@ enum MyEnum {
 //% weight=100 color=#0fbc11 icon=""
 //% groups='["Shift Ciphers", "Vigenere Ciphers"]'
 namespace encryption {
+
     /**
      * TODO: describe your function here
      * @param s describe parameter here, eg: "Hello"
@@ -25,6 +26,7 @@ namespace encryption {
     //% block="shift | %s | with key | %n"
     //% group="Shift Ciphers"
     export function shift(s: string, n: number): string {
+        n = Math.round(n)
         let alphabet = "abcdefghijklmnopqrstuvwxyz"
         let result = ''
         for (let i = 0; i < s.length; i++){

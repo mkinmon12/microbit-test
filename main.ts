@@ -1,1 +1,1 @@
-basic.showString(encryption.shift("", -3))
+basic.showString(encryption.shift("yes", 0))
