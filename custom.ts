@@ -83,7 +83,19 @@ namespace dictionaries {
         //% block="%dictionary | get value at key | %key"
         public getValue(key: string): string {
             let index = this.keys.indexOf(key)
-            return this.values[index]
+            if (index > -1){
+                return this.values[index]
+            }
+            return 'key not found'
+        }
+
+        //% block="%dictionary | delete pair at key | %key"
+        public delPair(key: string): void {
+            let index = this.keys.indexOf(key)
+            if (index > -1){
+                this.keys.splice(index, 1)
+                this.values.splice(index, 1)
+            }
         }
     }
 
