@@ -11,7 +11,8 @@
         "main.ts",
         "README.md",
         "custom.ts",
-        "new.jres"
+        "new.jres",
+        "customIcons.jres"
     ],
     "testFiles": [
         "test.ts"
