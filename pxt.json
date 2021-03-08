@@ -15,8 +15,7 @@
         "customIcons.jres"
     ],
     "testFiles": [
-        "test.ts",
-        "parallax-favicon.png"
+        "test.ts"
     ],
     "supportedTargets": [
         "microbit"
