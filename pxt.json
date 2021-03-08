@@ -12,8 +12,7 @@
         "README.md",
         "custom.ts",
         "new.jres",
-        "customIcons.jres",
-        "parallax-favicon.png"
+        "customIcons.jres"
     ],
     "testFiles": [
         "test.ts"
